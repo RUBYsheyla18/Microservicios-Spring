@@ -1,0 +1,250 @@
+openapi: 3.0.1
+info:
+  title: API UX Confirming Permission Validation
+  description: >-
+    Esta api nos permitirá validar si el cliente se encuentra dentro del horario establecido para el producto de Factoring Electrónico.
+  version: 1.0.0
+servers:
+  - url: /channel/ntlc/v1/confirming-permission-validation
+x-bcp-api-type: UX
+tags:
+  - name: Confirming Permission Validation Hub
+    description: Permite obtener información para Control de Horario del producto de Confirming Hub.
+  - name: Confirming Permission Validation Spoke
+    description: Permite obtener información para Control de Horario del producto de Confirming Spoke.
+paths:
+  '/hub/validate-datetime':
+    get:
+      tags:
+        - Confirming Permission Validation Hub
+      summary: Permite obtener el control de horario para Confirming Hub en Office Banking
+      description: |-
+        ### Acerca de la funcionalidad expuesta:
+        Permite obtener el control de horario para Confirming Hub en Office Banking
+        ### Data de Prueba:
+        Ninguno.
+        ### Precondiciones para el consumo de esta versión de la API:
+        Ninguno.
+        ### Usos válidos de Query Parameters:
+        Ninguno.
+        ### Variantes válidas del Dashboard (Cuerpo del mensaje):
+        No aplica.
+        ### Lista de Valores usadas en esta versión de la API:
+        No aplica.
+        ### Códigos de error usados en esta versión de la API:
+        | Código  |  HTTP Status | Descripción |
+        |---------|-------------|-------------|
+        | E000200 | 200 | El proceso termino satisfactoriamente
+        | E999999 | 500 | Ocurrió un error inesperado.
+      x-atlas-header:
+        $ref: '#/components/schemas/PermissionValidationHeaders'
+      parameters:
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Ocp-Apim-Subscription-Key
+      responses:
+        '200':
+          description: Proceso Satisfactorio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionValidationResponse'
+        '500':
+          description: Ocurrió un error inesperado.
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+            application/json;charset=UTF-8:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+  '/hub/validate-time-consult':
+    get:
+      tags:
+        - Confirming Permission Validation Hub
+      summary: Permite obtener el control de horario de consultas para Confirming Hub en Office Banking
+      description: |-
+        ### Acerca de la funcionalidad expuesta:
+        Permite obtener el control de horario de consultas para Confirming Hub en Office Banking
+        ### Data de Prueba:
+        Ninguno.
+        ### Precondiciones para el consumo de esta versión de la API:
+        Ninguno.
+        ### Usos válidos de Query Parameters:
+        Ninguno.
+        ### Variantes válidas del Dashboard (Cuerpo del mensaje):
+        No aplica.
+        ### Lista de Valores usadas en esta versión de la API:
+        No aplica.
+        ### Códigos de error usados en esta versión de la API:
+        | Código  |  HTTP Status | Descripción |
+        |---------|-------------|-------------|
+        | E000200 | 200 | El proceso termino satisfactoriamente
+        | E999999 | 500 | Ocurrió un error inesperado.
+      x-atlas-header:
+        $ref: '#/components/schemas/PermissionValidationHeaders'
+      parameters:
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Ocp-Apim-Subscription-Key
+      responses:
+        '200':
+          description: Proceso Satisfactorio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionValidationResponse'
+        '500':
+          description: Ocurrió un error inesperado.
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+            application/json;charset=UTF-8:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+  '/spoke/validate-datetime':
+    get:
+      tags:
+        - Confirming Permission Validation Spoke
+      summary: Permite obtener el control de horario para Confirming Spoke en Office Banking
+      description: |-
+        ### Acerca de la funcionalidad expuesta:
+        Permite obtener el control de horario para Confirming Spoke en Office Banking
+        ### Data de Prueba:
+        Ninguno.
+        ### Precondiciones para el consumo de esta versión de la API:
+        Ninguno.
+        ### Usos válidos de Query Parameters:
+        Ninguno.
+        ### Variantes válidas del Dashboard (Cuerpo del mensaje):
+        No aplica.
+        ### Lista de Valores usadas en esta versión de la API:
+        No aplica.
+        ### Códigos de error usados en esta versión de la API:
+        | Código  |  HTTP Status | Descripción |
+        |---------|-------------|-------------|
+        | E000200 | 200 | El proceso termino satisfactoriamente
+        | E999999 | 500 | Ocurrió un error inesperado.
+      x-atlas-header:
+        $ref: '#/components/schemas/PermissionValidationHeaders'
+      parameters:
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Ocp-Apim-Subscription-Key
+      responses:
+        '200':
+          description: Proceso Satisfactorio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionValidationResponse'
+        '500':
+          description: Ocurrió un error inesperado.
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+            application/json;charset=UTF-8:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+  '/spoke/validate-time-consult':
+    get:
+      tags:
+        - Confirming Permission Validation Spoke
+      summary: Permite obtener el control de horario de consultas para Confirming Spoke en Office Banking
+      description: |-
+        ### Acerca de la funcionalidad expuesta:
+        Permite obtener el control de horario de consultas para Confirming Spoke en Office Banking
+        ### Data de Prueba:
+        Ninguno.
+        ### Precondiciones para el consumo de esta versión de la API:
+        Ninguno.
+        ### Usos válidos de Query Parameters:
+        Ninguno.
+        ### Variantes válidas del Dashboard (Cuerpo del mensaje):
+        No aplica.
+        ### Lista de Valores usadas en esta versión de la API:
+        No aplica.
+        ### Códigos de error usados en esta versión de la API:
+        | Código  |  HTTP Status | Descripción |
+        |---------|-------------|-------------|
+        | E000200 | 200 | El proceso termino satisfactoriamente
+        | E999999 | 500 | Ocurrió un error inesperado.
+      x-atlas-header:
+        $ref: '#/components/schemas/PermissionValidationHeaders'
+      parameters:
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name
+        - $ref: >-
+            https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Ocp-Apim-Subscription-Key
+      responses:
+        '200':
+          description: Proceso Satisfactorio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionValidationResponse'
+        '500':
+          description: Ocurrió un error inesperado.
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+            application/json;charset=UTF-8:
+              schema:
+                $ref: >-
+                  https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException
+components:
+  schemas:
+    PermissionValidationHeaders:
+      title: PermissionValidationResponseHeaders
+      type: object
+    PermissionValidationResponse:
+      type: object
+      properties:
+        activate:
+          type: boolean
+          description: Flag que permite o no el acceso a consultas.
